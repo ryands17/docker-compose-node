@@ -1,0 +1,23 @@
+version: '3'
+services:
+  backend1:
+      build: ./node
+      tty: true
+
+  backend2:
+      build: ./node
+      tty: true
+
+  backend3:
+      build: ./node
+      tty: true
+
+  loadbalancer:
+      build: ./nginx
+      tty: true
+      links:
+          - backend1
+          - backend2
+          - backend3
+      ports:
+          - '8080:8080'

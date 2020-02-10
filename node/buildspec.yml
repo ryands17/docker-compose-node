@@ -1,0 +1,20 @@
+# aws codebuild for React and deployment to S3
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 8
+  build:
+    commands:
+      - echo Build started on `date`
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - src/**/*
+    - scripts/*
+    - package.json
+    - package-lock.json
+    - appspec.yml
+  # base-directory: 'dist'
