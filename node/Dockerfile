@@ -6,9 +6,9 @@ RUN mkdir /home/node/app
 
 WORKDIR /home/node/app
 
-COPY --chown=node:node package*.json ./
+COPY --chown=node:node package.json yarn.lock ./
 
-RUN npm ci
+RUN yarn --frozen-lockfile
 
 COPY --chown=node:node . .
 
