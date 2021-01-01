@@ -1,4 +1,4 @@
-FROM nginx:1.17.8-alpine
+FROM nginx:1.19.6-alpine
 
 RUN addgroup -S nginx && adduser -S -G nginx nginx && \
   chown -R nginx:nginx /etc/nginx
