@@ -1,7 +1,7 @@
 {
   "extends": ["config:base"],
   "masterIssue": true,
-  "schedule": ["every month"],
+  "schedule": ["every 3 months"],
   "packageRules": [
     {
       "matchUpdateTypes": [
