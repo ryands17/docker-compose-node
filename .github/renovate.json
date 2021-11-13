@@ -1,11 +1,10 @@
 {
-  "extends": ["config:base", "docker:disable"],
+  "extends": ["config:base"],
   "masterIssue": true,
-  "schedule": ["every 3 months on the 2 day of the month"],
+  "schedule": ["every 2 months on the 2 day of the month"],
   "packageRules": [
     {
       "matchUpdateTypes": [
-        "major",
         "minor",
         "patch",
         "pin",

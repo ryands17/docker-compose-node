@@ -1,11 +1,12 @@
-FROM nginx:1.21.0-alpine
+FROM nginx:1.21.4-alpine
 
-RUN addgroup -S nginx && adduser -S -G nginx nginx && \
-  chown -R nginx:nginx /etc/nginx
+RUN addgroup -S nginx && adduser -S -G nginx nginx
+
+COPY nginx.conf /etc/nginx/nginx.conf
+
+RUN chown -R nginx:nginx /etc/nginx
 
 USER nginx
-
-COPY --chown=nginx:nginx nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 8080
 

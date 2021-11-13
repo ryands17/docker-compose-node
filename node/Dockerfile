@@ -1,16 +1,16 @@
-FROM node:12-alpine
-
-USER node
-
-RUN mkdir /home/node/app
+FROM node:14.18-alpine3.14
 
 WORKDIR /home/node/app
 
-COPY --chown=node:node package.json yarn.lock ./
+COPY package.json yarn.lock ./
 
 RUN yarn --frozen-lockfile
 
-COPY --chown=node:node . .
+COPY . .
+
+RUN chown -R node:node /home/node
+
+USER node
 
 EXPOSE 3000
 
