@@ -1,4 +1,4 @@
-FROM nginx:1.21.6-alpine
+FROM nginx:1.27.2-alpine
 
 RUN addgroup -S nginx && adduser -S -G nginx nginx
 
